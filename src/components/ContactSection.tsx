@@ -20,6 +20,8 @@ const ContactSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
