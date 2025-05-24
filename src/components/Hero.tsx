@@ -50,11 +50,11 @@ const Hero: React.FC = () => {
           loop
           playsInline
           preload="auto"
-          poster="https://raw.githubusercontent.com/ader76/Villa-Souissi/ccefde3116b13d9ba44a337f7b6b271fccf92652/public/images/villa-1.png"
+          poster="/images/villa-1.png"
         >
-          <source src="https://raw.githubusercontent.com/ader76/Villa-Souissi/ccefde3116b13d9ba44a337f7b6b271fccf92652/public/videos/villa-souissi.mp4" type="video/mp4" />
+          <source src="/videos/villa-souissi.mp4" type="video/mp4" />
           <img 
-            src="https://raw.githubusercontent.com/ader76/Villa-Souissi/ccefde3116b13d9ba44a337f7b6b271fccf92652/public/images/villa-1.png"
+            src="/images/villa-1.png"
             alt="Villa Prestige"
             className="w-full h-full object-cover"
           />

@@ -1,22 +1,22 @@
 export const propertyImages = [
   {
     id: 1,
-    url: 'https://raw.githubusercontent.com/ader76/Villa-Souissi/ccefde3116b13d9ba44a337f7b6b271fccf92652/public/images/villa-1.png',
+    url: '/images/villa-1.png',
     alt: 'Luxury villa exterior view'
   },
   {
     id: 2,
-    url: 'https://raw.githubusercontent.com/ader76/Villa-Souissi/ccefde3116b13d9ba44a337f7b6b271fccf92652/public/images/villa-2.png',
+    url: '/images/villa-2.png',
     alt: 'Elegant villa entrance'
   },
   {
     id: 3,
-    url: 'https://raw.githubusercontent.com/ader76/Villa-Souissi/ccefde3116b13d9ba44a337f7b6b271fccf92652/public/images/villa-3.png',
+    url: '/images/villa-3.png',
     alt: 'Modern villa interior'
   },
   {
     id: 4,
-    url: 'https://raw.githubusercontent.com/ader76/Villa-Souissi/ccefde3116b13d9ba44a337f7b6b271fccf92652/public/images/villa-4.png',
+    url: '/images/villa-4.png',
     alt: 'Luxury garden and landscape'
   }
 ];
