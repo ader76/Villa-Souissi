@@ -14,7 +14,8 @@ const ContactSection: React.FC = () => {
     from_email: '',
     from_phone: '',
     message: '',
-    contact_method: 'email'
+    contact_method: 'email',
+    to_email: contactInfo.email // Add recipient email from contactInfo
   });
   
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -66,7 +67,8 @@ const ContactSection: React.FC = () => {
         from_email: '',
         from_phone: '',
         message: '',
-        contact_method: 'email'
+        contact_method: 'email',
+        to_email: contactInfo.email
       });
 
       alert(t('contact.success'));
@@ -140,6 +142,13 @@ const ContactSection: React.FC = () => {
               </div>
 
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+                {/* Add hidden input for recipient email */}
+                <input
+                  type="hidden"
+                  name="to_email"
+                  value={formData.to_email}
+                />
+                
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="from_name" className="block text-sm font-medium text-gray-700 mb-1">
