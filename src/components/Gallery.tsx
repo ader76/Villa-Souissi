@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { propertyImages } from '../data/propertyData';
-import { X } from 'lucide-react';
+import { X, FileText } from 'lucide-react';
 
 const Gallery: React.FC = () => {
   const { t } = useLanguage();
@@ -67,6 +67,11 @@ const Gallery: React.FC = () => {
     }
   };
 
+  // Check if the image is villa-7.jpg
+  const isVilla7 = (imageUrl: string) => {
+    return imageUrl.includes('villa-7.jpg');
+  };
+
   return (
     <section id="gallery" ref={sectionRef} className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -80,7 +85,7 @@ const Gallery: React.FC = () => {
           {propertyImages.map((image, index) => (
             <div 
               key={image.id}
-              className="gallery-item overflow-hidden rounded-lg shadow-sm border border-gray-100 transform translate-y-10 opacity-0 transition-all duration-500 ease-out cursor-pointer group"
+              className="gallery-item overflow-hidden rounded-lg shadow-sm border border-gray-100 transform translate-y-10 opacity-0 transition-all duration-500 ease-out cursor-pointer group relative"
               style={{ transitionDelay: `${index * 100}ms` }}
               onClick={() => openLightbox(index)}
             >
@@ -91,6 +96,14 @@ const Gallery: React.FC = () => {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                
+                {/* Note badge for villa-7.jpg */}
+                {isVilla7(image.url) && (
+                  <div className="absolute top-3 right-3 bg-gold-500 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg flex items-center gap-1">
+                    <FileText size={14} />
+                    <span>Note de renseignements disponible</span>
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -121,6 +134,14 @@ const Gallery: React.FC = () => {
               alt={propertyImages[selectedImage].alt}
               className="max-w-full max-h-[80vh] object-contain"
             />
+            
+            {/* Note badge in lightbox for villa-7.jpg */}
+            {isVilla7(propertyImages[selectedImage].url) && (
+              <div className="absolute top-4 left-4 bg-gold-500 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-lg flex items-center gap-2">
+                <FileText size={16} />
+                <span>Note de renseignements disponible</span>
+              </div>
+            )}
           </div>
           
           {/* Navigation Buttons */}
