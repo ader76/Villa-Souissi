@@ -44,6 +44,27 @@ video {
   -webkit-perspective: 1000;
 }
 
+/* A-Frame specific styles */
+a-scene {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Hide A-Frame UI elements */
+.a-enter-vr {
+  display: none !important;
+}
+
+.a-orientation-modal {
+  display: none !important;
+}
+
+/* Ensure A-Frame canvas takes full space */
+a-scene canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 /* Leaflet Map Styles */
 .leaflet-container {
   width: 100%;
@@ -118,4 +139,20 @@ video {
 /* Fix for popup close button */
 .leaflet-popup-close-button {
   cursor: pointer !important;
+}
+
+/* Hero overlay animation */
+.hero-overlay .max-w-4xl {
+  animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(2.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
