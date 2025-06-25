@@ -18,6 +18,16 @@ export const propertyImages = [
     id: 4,
     url: '/images/villa-4.png',
     alt: 'Luxury garden and landscape'
+  },
+  {
+    id: 5,
+    url: '/images/villa-6.jpg',
+    alt: 'Villa architectural details'
+  },
+  {
+    id: 6,
+    url: '/images/villa-7.jpg',
+    alt: 'Villa premium features'
   }
 ];
 
