@@ -37,10 +37,10 @@ export const translations = {
     'urban.total.height': 'Hauteur totale du bâtiment autorisée',
     'urban.total.height.value': '9 mètres',
     'urban.cos': 'COS',
-    'urban.cos.value': '40%',
+    'urban.cos.value': '0,7',
     'urban.cus': 'CUS',
-    'urban.cus.value': '0,7',
-    'urban.parking': 'Parking souterrain obligatoire',
+    'urban.cus.value': '40%',
+    'urban.parking': 'Le parking peut être ajouté sur toute la surface du terrain, en respectant les reculs urbains',
     
     // Status
     'status.title': 'Statut',
@@ -63,7 +63,7 @@ export const translations = {
     // Buyer Profiles
     'buyers.title': 'Idéal Pour',
     'buyers.embassy': 'Ambassades',
-    'buyers.embassy.desc': 'Emplacement diplomatique de premier ordre avec sécurité et prestige.',
+    'buyers.embassy.desc': 'Emplacement diplomatique de premier ordre avec sécurité et prestige, très proche des autres ambassades.',
     'buyers.school': 'Écoles Privées',
     'buyers.school.desc': 'Cadre idéal pour un établissement d\'enseignement d\'élite dans un quartier privilégié.',
     'buyers.clinic': 'Cliniques de Luxe',
@@ -153,10 +153,10 @@ export const translations = {
     'urban.total.height': 'Total building height allowed',
     'urban.total.height.value': '9 meters',
     'urban.cos': 'COS',
-    'urban.cos.value': '40%',
+    'urban.cos.value': '0.7',
     'urban.cus': 'CUS',
-    'urban.cus.value': '0.7',
-    'urban.parking': 'Mandatory underground parking',
+    'urban.cus.value': '40%',
+    'urban.parking': 'Parking can be added on the entire surface of the land, respecting urban setbacks',
     
     // Status
     'status.title': 'Status',
@@ -179,7 +179,7 @@ export const translations = {
     // Buyer Profiles
     'buyers.title': 'Perfect For',
     'buyers.embassy': 'Embassies',
-    'buyers.embassy.desc': 'Prime diplomatic location with security and prestige.',
+    'buyers.embassy.desc': 'Prime diplomatic location with security and prestige, very close to other embassies and high-end institutions.',
     'buyers.school': 'Private Schools',
     'buyers.school.desc': 'Ideal setting for an elite educational institution in a privileged neighborhood.',
     'buyers.clinic': 'Luxury Clinics',
@@ -269,10 +269,10 @@ export const translations = {
     'urban.total.height': 'ارتفاع البناء الإجمالي المسموح به',
     'urban.total.height.value': '9 أمتار',
     'urban.cos': 'معامل شغل الأرض',
-    'urban.cos.value': '40%',
+    'urban.cos.value': '0.7',
     'urban.cus': 'معامل استخدام الأرض',
-    'urban.cus.value': '0.7',
-    'urban.parking': 'مواقف سيارات تحت الأرض إلزامية',
+    'urban.cus.value': '40%',
+    'urban.parking': 'يمكن إضافة مواقف السيارات على كامل سطح الأرض، مع احترام التراجعات العمرانية',
     
     // Status
     'status.title': 'الحالة',
@@ -295,7 +295,7 @@ export const translations = {
     // Buyer Profiles
     'buyers.title': 'يناسب',
     'buyers.embassy': 'السفارات',
-    'buyers.embassy.desc': 'موقع دبلوماسي رئيسي يتمتع بالأمان والفخامة.',
+    'buyers.embassy.desc': 'موقع دبلوماسي رئيسي يتمتع بالأمان والفخامة، قريب جداً من السفارات والمؤسسات الراقية الأخرى.',
     'buyers.school': 'المدارس الخاصة',
     'buyers.school.desc': 'بيئة مثالية لمؤسسة تعليمية نخبوية في حي متميز.',
     'buyers.clinic': 'العيادات الفاخرة',

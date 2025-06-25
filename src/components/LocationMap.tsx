@@ -52,25 +52,25 @@ const LocationMap: React.FC = () => {
     {
       position: [33.967244, -6.849461] as [number, number],
       title: t('map.landmark.hotel'),
-      distance: '200m',
+      distance: '100m',
       icon: Building2
     },
     {
       position: [33.967844, -6.848961] as [number, number],
       title: t('map.landmark.embassy'),
-      distance: '500m - 1km',
+      distance: 'Very close',
       icon: MapPin
     },
     {
       position: [33.966644, -6.849961] as [number, number],
       title: t('map.landmark.school'),
-      distance: '1-2km',
+      distance: 'Very close',
       icon: GraduationCap
     },
     {
       position: [33.968044, -6.848461] as [number, number],
       title: t('map.landmark.hospital'),
-      distance: '1-3km',
+      distance: 'Very close',
       icon: Heart
     }
   ];

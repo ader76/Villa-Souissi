@@ -2,19 +2,18 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { contactInfo } from '../data/propertyData';
 import { Phone, Mail, MessageSquare, User, Send, Loader2 } from 'lucide-react';
-import emailjs from '@emailjs/browser';
 
 const ContactSection: React.FC = () => {
   const { t, isRTL } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
-    from_name: '',
-    from_lastname: '',
-    from_email: '',
-    from_phone: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
     message: '',
-    contact_method: 'email'
+    contactMethod: 'email'
   });
   
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -51,23 +50,34 @@ const ContactSection: React.FC = () => {
     try {
       setIsSubmitting(true);
       
-      await emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
-
-      setFormData({
-        from_name: '',
-        from_lastname: '',
-        from_email: '',
-        from_phone: '',
-        message: '',
-        contact_method: 'email'
+      const response = await fetch('https://formspree.io/f/xzzrqlor', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          contactMethod: formData.contactMethod,
+        }),
       });
 
-      alert(t('contact.success'));
+      if (response.ok) {
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          message: '',
+          contactMethod: 'email'
+        });
+        alert(t('contact.success'));
+      } else {
+        throw new Error('Failed to send message');
+      }
     } catch (error) {
       console.error('Failed to send email:', error);
       alert('Failed to send message. Please try again later.');
@@ -140,7 +150,7 @@ const ContactSection: React.FC = () => {
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="from_name" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
                       {t('contact.firstName')}
                     </label>
                     <div className="relative">
@@ -149,9 +159,9 @@ const ContactSection: React.FC = () => {
                       </div>
                       <input
                         type="text"
-                        id="from_name"
-                        name="from_name"
-                        value={formData.from_name}
+                        id="firstName"
+                        name="firstName"
+                        value={formData.firstName}
                         onChange={handleChange}
                         required
                         className={`w-full ${isRTL ? 'pr-10 pl-4' : 'pl-10 pr-4'} py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors`}
@@ -161,7 +171,7 @@ const ContactSection: React.FC = () => {
                   </div>
                   
                   <div>
-                    <label htmlFor="from_lastname" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
                       {t('contact.lastName')}
                     </label>
                     <div className="relative">
@@ -170,9 +180,9 @@ const ContactSection: React.FC = () => {
                       </div>
                       <input
                         type="text"
-                        id="from_lastname"
-                        name="from_lastname"
-                        value={formData.from_lastname}
+                        id="lastName"
+                        name="lastName"
+                        value={formData.lastName}
                         onChange={handleChange}
                         required
                         className={`w-full ${isRTL ? 'pr-10 pl-4' : 'pl-10 pr-4'} py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors`}
@@ -184,7 +194,7 @@ const ContactSection: React.FC = () => {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="from_email" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                       {t('contact.email')}
                     </label>
                     <div className="relative">
@@ -193,9 +203,9 @@ const ContactSection: React.FC = () => {
                       </div>
                       <input
                         type="email"
-                        id="from_email"
-                        name="from_email"
-                        value={formData.from_email}
+                        id="email"
+                        name="email"
+                        value={formData.email}
                         onChange={handleChange}
                         required
                         className={`w-full ${isRTL ? 'pr-10 pl-4' : 'pl-10 pr-4'} py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors`}
@@ -205,7 +215,7 @@ const ContactSection: React.FC = () => {
                   </div>
                   
                   <div>
-                    <label htmlFor="from_phone" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
                       {t('contact.phone')}
                     </label>
                     <div className="relative">
@@ -214,9 +224,9 @@ const ContactSection: React.FC = () => {
                       </div>
                       <input
                         type="tel"
-                        id="from_phone"
-                        name="from_phone"
-                        value={formData.from_phone}
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
                         onChange={handleChange}
                         className={`w-full ${isRTL ? 'pr-10 pl-4' : 'pl-10 pr-4'} py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors`}
                         placeholder={t('contact.phone.placeholder')}
@@ -226,13 +236,13 @@ const ContactSection: React.FC = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="contact_method" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="contactMethod" className="block text-sm font-medium text-gray-700 mb-1">
                     {t('contact.preferred')}
                   </label>
                   <select
-                    id="contact_method"
-                    name="contact_method"
-                    value={formData.contact_method}
+                    id="contactMethod"
+                    name="contactMethod"
+                    value={formData.contactMethod}
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors"
                   >
