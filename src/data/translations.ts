@@ -6,7 +6,7 @@ export const translations = {
     'language.arabic': 'AR',
     
     // Hero
-    'hero.title': 'Villa de Prestige à Usage Commercial',
+    'hero.title': 'Villa pour projet commercial de prestige',
     'hero.subtitle': 'Emplacement Stratégique à Souissi, Rabat',
     'hero.cta': 'Planifier une Visite',
     
@@ -122,7 +122,7 @@ export const translations = {
     'language.arabic': 'AR',
     
     // Hero
-    'hero.title': 'Prestigious Commercial Villa',
+    'hero.title': 'Villa for a high-end commercial project',
     'hero.subtitle': 'Strategic Location in Souissi, Rabat',
     'hero.cta': 'Schedule a Private Visit',
     
@@ -238,7 +238,7 @@ export const translations = {
     'language.arabic': 'AR',
     
     // Hero
-    'hero.title': 'فيلا تجارية فاخرة',
+    'hero.title': 'فيلا لمشروع تجاري راقي',
     'hero.subtitle': 'موقع استراتيجي في السويسي، الرباط',
     'hero.cta': 'احجز زيارة خاصة',
     
