@@ -54,6 +54,8 @@ const Hero: React.FC = () => {
 
   const handleVideoLoaded = () => {
     if (videoRef.current) {
+      // Set playback rate to 50% (0.5x speed)
+      videoRef.current.playbackRate = 0.5;
       videoRef.current.play().catch(error => {
         console.log('Video autoplay failed:', error);
         setIsVideoError(true);
