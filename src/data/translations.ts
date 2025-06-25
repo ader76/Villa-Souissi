@@ -46,7 +46,7 @@ export const translations = {
     'status.title': 'Statut',
     'status.availability': 'Vacant et immédiatement disponible',
     'status.price': 'Prix',
-    'status.price.value': '15 000 MAD/m² (≈ 22,7 millions MAD)',
+    'status.price.value': '16 000 MAD/m² (≈ 24,24 millions MAD)',
     'status.listed': 'Déjà référencé auprès de plusieurs agences — toujours disponible',
     
     // Why This Villa
@@ -162,7 +162,7 @@ export const translations = {
     'status.title': 'Status',
     'status.availability': 'Vacant and immediately available',
     'status.price': 'Price',
-    'status.price.value': '15,000 MAD/m² (≈ 22.7 million MAD)',
+    'status.price.value': '16,000 MAD/m² (≈ 24.24 million MAD)',
     'status.listed': 'Already listed with multiple agencies — still available',
     
     // Why This Villa
@@ -278,7 +278,7 @@ export const translations = {
     'status.title': 'الحالة',
     'status.availability': 'شاغرة ومتاحة فورًا',
     'status.price': 'السعر',
-    'status.price.value': '15,000 درهم/متر مربع (≈ 22.7 مليون درهم)',
+    'status.price.value': '16,000 درهم/متر مربع (≈ 24.24 مليون درهم)',
     'status.listed': 'مدرجة بالفعل لدى وكالات متعددة — لا تزال متاحة',
     
     // Why This Villa
