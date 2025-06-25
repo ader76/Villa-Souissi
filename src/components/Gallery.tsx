@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { propertyImages } from '../data/propertyData';
-import { X, FileText } from 'lucide-react';
+import { X, FileText, AlertCircle } from 'lucide-react';
 
 const Gallery: React.FC = () => {
   const { t } = useLanguage();
@@ -97,12 +97,26 @@ const Gallery: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                 
-                {/* Note badge for villa-7.jpg */}
+                {/* Highly visible note badge for villa-7.jpg */}
                 {isVilla7(image.url) && (
-                  <div className="absolute top-3 right-3 bg-gold-500 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg flex items-center gap-1">
-                    <FileText size={14} />
-                    <span>Note de renseignements disponible</span>
-                  </div>
+                  <>
+                    {/* Main prominent badge */}
+                    <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-3 text-center font-bold text-sm shadow-lg border-b-4 border-red-700">
+                      <div className="flex items-center justify-center gap-2">
+                        <AlertCircle size={18} className="animate-pulse" />
+                        <span className="uppercase tracking-wide">Note de renseignements disponible</span>
+                        <AlertCircle size={18} className="animate-pulse" />
+                      </div>
+                    </div>
+                    
+                    {/* Additional corner badge for extra visibility */}
+                    <div className="absolute bottom-3 right-3 bg-yellow-400 text-gray-900 px-3 py-2 rounded-full text-xs font-bold shadow-lg border-2 border-yellow-500 animate-pulse">
+                      <div className="flex items-center gap-1">
+                        <FileText size={14} />
+                        <span>INFO</span>
+                      </div>
+                    </div>
+                  </>
                 )}
               </div>
             </div>
@@ -135,11 +149,14 @@ const Gallery: React.FC = () => {
               className="max-w-full max-h-[80vh] object-contain"
             />
             
-            {/* Note badge in lightbox for villa-7.jpg */}
+            {/* Prominent note badge in lightbox for villa-7.jpg */}
             {isVilla7(propertyImages[selectedImage].url) && (
-              <div className="absolute top-4 left-4 bg-gold-500 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-lg flex items-center gap-2">
-                <FileText size={16} />
-                <span>Note de renseignements disponible</span>
+              <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-4 text-center font-bold text-lg shadow-xl border-b-4 border-red-700">
+                <div className="flex items-center justify-center gap-3">
+                  <AlertCircle size={24} className="animate-pulse" />
+                  <span className="uppercase tracking-wide">Note de renseignements disponible</span>
+                  <AlertCircle size={24} className="animate-pulse" />
+                </div>
               </div>
             )}
           </div>
