@@ -104,7 +104,7 @@ const Gallery: React.FC = () => {
                     <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-3 text-center font-bold text-sm shadow-lg border-b-4 border-red-700">
                       <div className="flex items-center justify-center gap-2">
                         <AlertCircle size={18} className="animate-pulse" />
-                        <span className="uppercase tracking-wide">Note de renseignements disponible</span>
+                        <span className="uppercase tracking-wide">{t('gallery.note.available')}</span>
                         <AlertCircle size={18} className="animate-pulse" />
                       </div>
                     </div>
@@ -154,7 +154,7 @@ const Gallery: React.FC = () => {
               <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-4 text-center font-bold text-lg shadow-xl border-b-4 border-red-700">
                 <div className="flex items-center justify-center gap-3">
                   <AlertCircle size={24} className="animate-pulse" />
-                  <span className="uppercase tracking-wide">Note de renseignements disponible</span>
+                  <span className="uppercase tracking-wide">{t('gallery.note.available')}</span>
                   <AlertCircle size={24} className="animate-pulse" />
                 </div>
               </div>

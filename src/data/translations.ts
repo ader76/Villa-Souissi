@@ -74,6 +74,7 @@ export const translations = {
     // Gallery
     'gallery.title': 'Galerie',
     'gallery.view': 'Voir toutes les images',
+    'gallery.note.available': 'Note de renseignements disponible',
     
     // Map
     'map.title': 'Localisation',
@@ -190,6 +191,7 @@ export const translations = {
     // Gallery
     'gallery.title': 'Gallery',
     'gallery.view': 'View all images',
+    'gallery.note.available': 'Information note available',
     
     // Map
     'map.title': 'Location',
@@ -306,6 +308,7 @@ export const translations = {
     // Gallery
     'gallery.title': 'المعرض',
     'gallery.view': 'عرض جميع الصور',
+    'gallery.note.available': 'مذكرة معلومات متاحة',
     
     // Map
     'map.title': 'الموقع',
