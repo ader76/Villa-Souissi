@@ -50,25 +50,25 @@ const LocationMap: React.FC = () => {
 
   const landmarks = [
     {
-      position: [33.967244, -6.849461] as [number, number],
+      position: [33.967185, -6.849115] as [number, number], // Adjusted for 100m distance from villa
       title: t('map.landmark.hotel'),
       distance: '100m',
       icon: Building2
     },
     {
-      position: [33.967844, -6.848961] as [number, number],
+      position: [33.967685, -6.847915] as [number, number], // Positioned very close to villa - embassy area
       title: t('map.landmark.embassy'),
       distance: 'Very close',
       icon: MapPin
     },
     {
-      position: [33.966644, -6.849961] as [number, number],
+      position: [33.967285, -6.848515] as [number, number], // Positioned close to villa for international schools
       title: t('map.landmark.school'),
-      distance: 'Very close',
+      distance: 'Close',
       icon: GraduationCap
     },
     {
-      position: [33.968044, -6.848461] as [number, number],
+      position: [33.967885, -6.848015] as [number, number], // Positioned very close for private clinics
       title: t('map.landmark.hospital'),
       distance: 'Very close',
       icon: Heart

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const WhatsAppButton: React.FC = () => {
-  const whatsappUrl = 'https://wa.me/212771051221';
+  const whatsappUrl = 'https://wa.me/212771051331';
 
   return (
     <a
