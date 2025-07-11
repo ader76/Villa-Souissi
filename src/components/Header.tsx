@@ -40,13 +40,13 @@ const Header: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <div className="flex items-center flex-1">
+        <div className="flex items-center">
           <h1 className={`text-xl font-serif font-bold ${isScrolled ? 'text-gray-800' : 'text-white'}`}>
             Villa Prestige
           </h1>
         </div>
 
-        <div className="hidden md:flex items-center space-x-6 flex-shrink-0">
+        <div className="hidden md:flex items-center space-x-6 ml-auto">
           <nav className={`${isScrolled ? 'text-gray-800' : 'text-white'}`}>
             <ul className="flex space-x-6">
               <li>
@@ -90,7 +90,7 @@ const Header: React.FC = () => {
           <LanguageSwitcher isScrolled={isScrolled} />
         </div>
 
-        <div className="md:hidden flex items-center flex-shrink-0">
+        <div className="md:hidden flex items-center ml-auto">
           <LanguageSwitcher isScrolled={isScrolled} />
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
