@@ -48,33 +48,6 @@ const LocationMap: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  const landmarks = [
-    {
-      position: [33.967185, -6.849115] as [number, number], // Adjusted for 100m distance from villa
-      title: t('map.landmark.hotel'),
-      distance: '100m',
-      icon: Building2
-    },
-    {
-      position: [33.967685, -6.847915] as [number, number], // Positioned very close to villa - embassy area
-      title: t('map.landmark.embassy'),
-      distance: 'Very close',
-      icon: MapPin
-    },
-    {
-      position: [33.967285, -6.848515] as [number, number], // Positioned close to villa for international schools
-      title: t('map.landmark.school'),
-      distance: 'Close',
-      icon: GraduationCap
-    },
-    {
-      position: [33.967885, -6.848015] as [number, number], // Positioned very close for private clinics
-      title: t('map.landmark.hospital'),
-      distance: 'Very close',
-      icon: Heart
-    }
-  ];
-
   return (
     <section id="location" ref={sectionRef} className="relative py-16 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -108,38 +81,21 @@ const LocationMap: React.FC = () => {
                   </div>
                 </Popup>
               </Marker>
-              {landmarks.map((landmark, index) => (
-                <Marker key={index} position={landmark.position}>
-                  <Popup>
-                    <div className="text-sm">
-                      <p className="font-semibold">{landmark.title}</p>
-                      <p className="text-gray-600">{landmark.distance}</p>
-                    </div>
-                  </Popup>
-                </Marker>
-              ))}
             </MapContainer>
           </div>
 
           <div className="relative z-10 bg-white rounded-lg shadow-sm p-6 max-w-[600px] mx-auto">
-            <div className="grid grid-cols-2 gap-4">
-              {landmarks.map((landmark, index) => (
-                <div key={index} className="flex items-start space-x-3">
-                  <landmark.icon className="text-gold-500 flex-shrink-0" size={20} />
-                  <div>
-                    <h3 className="font-medium text-gray-900 mb-1">{landmark.title}</h3>
-                    <p className="text-gray-600 text-sm">{landmark.distance}</p>
-                  </div>
-                </div>
-              ))}
+            <div className="text-center">
+              <h3 className="font-medium text-gray-900 mb-2">Villa Prestige Location</h3>
+              <p className="text-gray-600 text-sm mb-4">{t('property.location.value')}</p>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-gray-100">
+            <div className="pt-4 border-t border-gray-100">
               <a
                 href={`https://www.google.com/maps/search/?api=1&query=${villaPosition[0]},${villaPosition[1]}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 bg-gold-500 hover:bg-gold-600 text-white rounded-md transition-colors duration-300"
+                className="w-full flex items-center justify-center px-4 py-2 bg-gold-500 hover:bg-gold-600 text-white rounded-md transition-colors duration-300"
               >
                 <Navigation className="mr-2" size={18} />
                 {t('map.directions')}
