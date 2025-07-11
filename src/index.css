@@ -207,6 +207,80 @@ a-scene canvas {
   }
 }
 
+/* Language Switcher Animations */
+.language-dropdown-enter {
+  opacity: 0;
+  transform: translateY(-10px) scale(0.95);
+}
+
+.language-dropdown-enter-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: all 200ms ease-out;
+}
+
+.language-dropdown-exit {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.language-dropdown-exit-active {
+  opacity: 0;
+  transform: translateY(-10px) scale(0.95);
+  transition: all 150ms ease-in;
+}
+
+/* Loading Screen Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.loading-screen {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Accessibility improvements */
+.language-switcher:focus-within {
+  outline: 2px solid #d5a84b;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .language-dropdown {
+    border: 2px solid;
+  }
+  
+  .language-option:hover,
+  .language-option:focus {
+    outline: 2px solid;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-float {
+    animation: none;
+  }
+  
+  .language-dropdown-enter-active,
+  .language-dropdown-exit-active {
+    transition: none;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* Hero overlay animation */
 .hero-overlay .max-w-4xl {
   animation: fadeInUp 1s ease-out 0.5s both;
