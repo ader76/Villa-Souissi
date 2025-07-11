@@ -114,7 +114,7 @@ export const mapLocation = {
 };
 
 export const contactInfo = {
-  phone: '+212625310310',
-  whatsapp: '212625310310',
+  phone: '+212771051221',
+  whatsapp: '212771051221',
   email: 'mrbouaamri@gmail.com'
 };

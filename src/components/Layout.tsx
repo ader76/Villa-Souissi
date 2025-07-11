@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import Header from './Header';
+import WhatsAppButton from './WhatsAppButton';
 
 interface LayoutProps {
   children: ReactNode;
@@ -15,6 +16,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <main>
         {children}
       </main>
+      <WhatsAppButton />
     </div>
   );
 };
